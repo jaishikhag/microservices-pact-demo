@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pact.consumer.ProductCatalogueServiceAdapterTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-02T14:49:35" hostname="GCWJN6C2E" time="2.683">
+  <properties/>
+  <testcase name="runTest" classname="pact.consumer.ProductCatalogueServiceAdapterTests" time="2.683"/>
+  <system-out><![CDATA[20:19:36.432 [Test worker] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+20:19:36.447 [Test worker] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+20:19:36.463 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+20:19:36.463 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+20:19:36.463 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+20:19:36.463 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+20:19:36.463 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+20:19:36.463 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+20:19:36.463 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+20:19:36.463 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+20:19:36.463 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+20:19:36.650 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+20:19:36.650 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\212582~1\AppData\Local\Temp (java.io.tmpdir)
+20:19:36.650 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+20:19:36.650 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+20:19:36.681 [Test worker] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+20:19:36.681 [Test worker] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+20:19:36.713 [Test worker] DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0x0559b7a73de83ee7 (took 2 ms)
+20:19:36.759 [Test worker] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+20:19:36.759 [Test worker] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+20:19:36.837 [Test worker] DEBUG io.netty.util.NetUtil - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+20:19:36.837 [Test worker] DEBUG io.netty.util.NetUtil - \proc\sys\net\core\somaxconn: 200 (non-existent)
+20:19:37.539 [nioEventLoopGroup-3-1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+20:19:37.555 [nioEventLoopGroup-3-1] DEBUG io.netty.util.internal.JavassistTypeParameterMatcherGenerator - Generated: io.netty.util.internal.__matchers__.io.netty.handler.codec.http.HttpObjectMatcher
+20:19:37.571 [nioEventLoopGroup-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacity.default: 262144
+20:19:37.571 [nioEventLoopGroup-3-1] DEBUG io.netty.util.internal.Cleaner0 - java.nio.ByteBuffer.cleaner(): available
+20:19:37.742 [nioEventLoopGroup-3-1] DEBUG au.com.dius.pact.consumer.UnfilteredMockProvider - Received request: 	method: GET
+	path: /products
+	query: [:]
+	headers: [Connection:keep-alive, Content-Length:0, Accept:application/hal+json, User-Agent:Jersey/2.23.1 (HttpUrlConnection 1.8.0_101), Host:localhost:8080]
+	matchers: [:]
+	body: au.com.dius.pact.model.OptionalBody(EMPTY, )
+20:19:37.773 [nioEventLoopGroup-3-1] DEBUG au.com.dius.pact.model.RequestMatching$ - comparing to expected request: 
+	method: GET
+	path: /products
+	query: null
+	headers: [Accept:application/hal+json]
+	matchers: [:]
+	body: au.com.dius.pact.model.OptionalBody(MISSING, null)
+20:19:37.898 [nioEventLoopGroup-3-1] DEBUG au.com.dius.pact.model.Matching$ - No matcher for text/plain, using equality
+20:19:37.898 [nioEventLoopGroup-3-1] DEBUG au.com.dius.pact.model.RequestMatching$ - Request mismatch: List()
+20:19:37.914 [nioEventLoopGroup-3-1] DEBUG au.com.dius.pact.consumer.UnfilteredMockProvider - Generating response: 	status: 200 
+	headers: [Content-Type:application/hal+json] 
+	matchers: [$.body._embedded.items[*]._links.self.title:[match:type], $.body._embedded.items:[min:0, match:type], $.body._embedded.items[*]._links.self.href:[match:type], $.body._embedded.items[*].logo:[match:type], $.body.page:[match:integer], $.body._embedded.items[*].name:[match:type], $.body._embedded.items[*].id:[match:type], $.body._embedded.items[*].createdOn:[regex:\d{4}-\d{1,2}-\d{1,2}], $.body._embedded.items[*].description:[match:type], $.body.totalCount:[match:integer], $.body.perPage:[match:integer], $.body._links.self.href:[match:type]] 
+	body: au.com.dius.pact.model.OptionalBody(PRESENT, {"perPage":10,"_links":{"self":{"href":"/products"}},"_embedded":{"items":[{"_links":{"self":{"href":"/products/LRPL","title":"Personal Loan"}},"name":"Personal Loan","description":"Low Rate Personal Loan","logo":"/cdn/logos/lrpl.webp","id":"LRPL","createdOn":"2016-2-28"}]},"page":1,"totalCount":1})
+20:19:38.507 [Test worker] DEBUG au.com.dius.pact.consumer.PactGenerator - Writing pact Product_Catalogue_Consumer -> Product_Catalogue_Provider to file C:\Users\212582476\privaterepo\microservices-pact-demo\consumer\build\pacts\Product_Catalogue_Consumer-Product_Catalogue_Provider.json
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,101 @@
+{
+    "provider": {
+        "name": "Product_Catalogue_Provider"
+    },
+    "consumer": {
+        "name": "Product_Catalogue_Consumer"
+    },
+    "interactions": [
+        {
+            "description": "a request for the product catalogue",
+            "request": {
+                "method": "GET",
+                "path": "/products",
+                "headers": {
+                    "Accept": "application/hal+json"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/hal+json"
+                },
+                "body": {
+                    "_embedded": {
+                        "items": [
+                            {
+                                "_links": {
+                                    "self": {
+                                        "href": "/products/LRPL",
+                                        "title": "Personal Loan"
+                                    }
+                                },
+                                "createdOn": "2016-2-28",
+                                "description": "Low Rate Personal Loan",
+                                "id": "LRPL",
+                                "logo": "/cdn/logos/lrpl.webp",
+                                "name": "Personal Loan"
+                            }
+                        ]
+                    },
+                    "_links": {
+                        "self": {
+                            "href": "/products"
+                        }
+                    },
+                    "page": 1,
+                    "perPage": 10,
+                    "totalCount": 1
+                },
+                "matchingRules": {
+                    "$.body._embedded.items[*]._links.self.title": {
+                        "match": "type"
+                    },
+                    "$.body._embedded.items": {
+                        "min": 0,
+                        "match": "type"
+                    },
+                    "$.body._embedded.items[*]._links.self.href": {
+                        "match": "type"
+                    },
+                    "$.body._embedded.items[*].logo": {
+                        "match": "type"
+                    },
+                    "$.body.page": {
+                        "match": "integer"
+                    },
+                    "$.body._embedded.items[*].name": {
+                        "match": "type"
+                    },
+                    "$.body._embedded.items[*].id": {
+                        "match": "type"
+                    },
+                    "$.body._embedded.items[*].createdOn": {
+                        "regex": "\\d{4}-\\d{1,2}-\\d{1,2}"
+                    },
+                    "$.body._embedded.items[*].description": {
+                        "match": "type"
+                    },
+                    "$.body.totalCount": {
+                        "match": "integer"
+                    },
+                    "$.body.perPage": {
+                        "match": "integer"
+                    },
+                    "$.body._links.self.href": {
+                        "match": "type"
+                    }
+                }
+            },
+            "providerState": "products exist"
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.2.13"
+        }
+    }
+}

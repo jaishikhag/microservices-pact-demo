@@ -49,6 +49,14 @@ subprojects {
         
         compile 'org.slf4j:slf4j-api:1.7.21'
         
+        // https://mvnrepository.com/artifact/au.com.dius/pact-jvm-model_2.11
+		compile group: 'au.com.dius', name: 'pact-jvm-model_2.11', version: '3.2.13'
+		
+		// https://mvnrepository.com/artifact/au.com.dius/pact-jvm-provider-junit_2.10
+		compile group: 'au.com.dius', name: 'pact-jvm-provider-junit_2.10', version: '2.4.15'
+		
+        
+        
         testCompile 'junit:junit:4.12'
                 
         testCompile 'org.springframework.boot:spring-boot-starter-test'

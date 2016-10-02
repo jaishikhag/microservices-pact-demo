@@ -63,7 +63,7 @@ public class ProductCatalogueServiceAdapterTests {
   }
 
   @Test
-  @PactVerification("Product_Catalogue_Provider")
+  @PactVerification("Product_Catalogue_Provider") //create pact file
   public void runTest() {
     assertEquals(new ProductCatalogueServiceAdapter("http://localhost:8080").getProducts(), 
         ImmutableList.of(new Product("LRPL", "2016-2-28", "Personal Loan", "Low Rate Personal Loan",  "/cdn/logos/lrpl.webp")));

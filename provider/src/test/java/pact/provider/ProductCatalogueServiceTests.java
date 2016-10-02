@@ -38,6 +38,7 @@ public class ProductCatalogueServiceTests {
 
   @Test
   public void test_getproductsrepresentation_success() {
+	  System.out.println(this.port);
     final ContentRepresentation representation = ClientBuilder.newClient(new ClientConfiguration())
         .target("http://localhost:" + this.port)
         .path("products")
